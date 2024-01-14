@@ -5,6 +5,7 @@ import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Verify from './components/Verify'
 import { Toaster } from 'react-hot-toast';
+import Update from './components/Update'
 function App() {
 
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path='/' element={<Signin />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/update' element={<Update />} />
         <Route path='/verify/:token' element={<Verify />} />
+        
       </Routes>
     </>
   )

@@ -23,16 +23,21 @@ export default function Verify() {
 
   return (
     <>
+    <div className="w-full h-screen bg-black text-white flex justify-center items-center text-center">
+      
       {
         validUrl ? (
-          <div>
+          <div className="text-2xl flex flex-col">
             <br />
-            "Verification successful ✅"
-            <Link to='/'>Login</Link>
+            Verification Successful ✅
+            <Link to='/' className="text-blue-500">Login</Link>
           </div>
         ) : (
-          "Verification fail"
+          <div className="text-2xl">
+          Verification Failed
+          </div>
         )}
+        </div>
     </>
   )
 }

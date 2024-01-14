@@ -15,7 +15,7 @@ export default function Signin() {
     setUser({...user,[e.target.name]:e.target.value})
   }
 
-  const submitData = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     
@@ -33,10 +33,21 @@ export default function Signin() {
 
   return (
     <>
-     <input type="text" name="email"  placeholder="email" onChange={handleChange}/> 
-     <input type="text" name="password" placeholder="password" onChange={handleChange}/> 
-     <button onClick={submitData}>Login</button>
-     <Link to="signup">Register</Link>
+<div className='w-full h-screen flex justify-center items-center text-center'>
+        <form className='w-96 h-80 flex flex-col items-center bg-sky-900 rounded-md p-12'>
+          <p className='text-3xl mb-4 font-semibold'>Login</p>
+          <input 
+          className='w-full border-b-2 rounded-full mt-3 p-1 outline-none'
+          type="text" placeholder='Email' name='email' onChange={handleChange}/>
+          <input 
+          className='w-full border-b-2 rounded-full mt-3 p-1 outline-none'
+          type="text" placeholder='Password' name='password' onChange={handleChange}/>
+          <button
+          className='w-full border-2 rounded-full mt-6 p-1 text-blue-600 bg-white'
+          onClick={handleSubmit}>Login</button>
+          <p className='mt-3 text-white -ml-20'>Dont have an account <Link to='/signup'><span className='text-blue-400'>Sign Up</span></Link></p>
+        </form>
+      </div>
     </>
   )
 }
